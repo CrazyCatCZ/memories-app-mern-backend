@@ -8,17 +8,18 @@ import { Server } from "socket.io";
 import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 
-const PORT = process.env.PORT || 5000;
 const app = express();
 dotenv.config();
 
+const PORT = process.env.PORT || 5000;
+
 const connectDB = async () => {
   try {
-    const conn = mongoose.connect(process.env.CONNECTION_URL, {
+    const conn = await mongoose.connect(process.env.CONNECTION_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log("MongoDB Connected");
   } catch (error) {
     console.log(error.message);
   }
