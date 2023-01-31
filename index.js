@@ -38,6 +38,7 @@ mongoose
 //mongoose.set("useFindAndModify", false);
 
 // Socket.io
+/*
 const io = new Server(3000);
 
 io.on("connection", (socket) => {
@@ -50,3 +51,4 @@ io.on("connection", (socket) => {
     // ...
   });
 });
+*/
